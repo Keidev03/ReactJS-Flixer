@@ -1,0 +1,119 @@
+@use "../../../scss/" as *;
+
+.comment {
+    @include flex(center, center);
+    max-width: var(--max-width);
+    padding: var(--padding-page);
+    background-color: var(--background-color);
+    border-radius: calc(--border-radius);
+    color: var(--text-color);
+    height: 100%;
+    padding-bottom: 3rem;
+    display: block;
+    margin: auto;
+
+    .header {
+        margin-bottom: 3rem;
+    }
+
+    .list {
+        margin-bottom: 3rem;
+
+        .content {
+            display: flex;
+            margin-bottom: 3rem;
+
+            .post {
+
+                .timeago {
+                    font-size: 0.8rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .disscusion {
+                    font-size: 1.2rem;
+                    margin-bottom: 0.5rem;
+                    text-align: justify;
+                    font-weight: 400;
+                }
+
+                .action {
+                    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+
+
+                    .icon-like {
+                        font-weight: 500;
+                        font-size: 0.9rem;
+                        padding: 0;
+                    }
+
+                    .icon {
+                        font-weight: 500;
+                        font-size: 0.9rem;
+                        padding: 0 0 0 5px;
+                    }
+
+                    .reply {
+                        margin-right: 1rem;
+                        font-size: 0.8rem;
+                        padding: 0;
+                        background: none;
+                        border: none;
+                        color: var(--text-color);
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+.input-comment {
+    display: flex;
+    width: 100%;
+    margin-bottom: 6rem;
+    position: relative;
+
+    .textareaContainer {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    .textarea {
+        color: var(--text-color);
+        width: 100%;
+        height: 100%;
+        border: none;
+        resize: none;
+        padding: 3rem;
+        font-size: 1.3rem;
+        box-sizing: border-box;
+        border-radius: var(--border-radius);
+        background-color: #aaaaaa6c;
+        overflow: hidden;
+    }
+
+    .textarea:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+    .buttonContainer {
+        position: absolute;
+        right: 0px;
+        bottom: -40px;
+    }
+}
+
+.reply {
+    padding-left: 7rem;
+}
+
+.avatar {
+    width: 5rem;
+    height: 5rem;
+    border: 2px solid;
+    border-radius: var(--border-radius);
+    margin: 0.3rem 2rem 0 0;
+}

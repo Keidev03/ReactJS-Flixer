@@ -1,0 +1,21 @@
+@use "../../scss/" as *;
+
+.wrapper {
+     background-color: var(--background-color);
+     padding-bottom: 3rem;
+
+     .container {
+          max-width: var(--max-width);
+          margin: auto;
+
+          .section {
+               padding: var(--padding-page);
+
+               .header {
+                    @include flex(center, space-between);
+                    color: var(--text-color);
+                    padding-bottom: 2rem;
+               }
+          }
+     }
+}

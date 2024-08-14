@@ -1,0 +1,195 @@
+@use "../../scss/" as *;
+
+
+.wrapper {
+    background-color: var(--background-color);
+}
+
+
+.banner {
+    height: 320px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--overlay);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to top, var(--background-color), rgba(#000, 0));
+    }
+}
+
+.movie-content {
+    @include flex(center, flex-start);
+    max-width: var(--max-width);
+    margin: auto;
+    margin-right: auto;
+    margin-top: -200px;
+    margin-bottom: 8rem;
+    position: relative;
+    padding: var(--padding-page);
+
+    @include tablet() {
+        margin-bottom: 4rem;
+    }
+
+    @include mobile() {
+        margin-bottom: 4rem;
+    }
+
+    .poster {
+        flex: 1;
+        @include flex(center, center);
+        margin-left: 1rem;
+
+        img {
+            width: 300px;
+            border-radius: calc(var(--border-radius) + 30px);
+            box-shadow: var(--box-shadow);
+        }
+    }
+
+    .info {
+
+        width: 70%;
+        position: relative;
+
+        @include mobile {
+            width: 100%;
+            padding-left: 0;
+        }
+
+        &>* {
+            margin-bottom: 2rem;
+        }
+
+        .title {
+            color: var(--text-color);
+            font-size: 4rem;
+            line-height: 1;
+        }
+
+        .genres {
+            display: flex;
+            flex-wrap: wrap;
+
+            .item {
+                color: var(--text-color);
+                margin: 0 5px 5px 0;
+                box-sizing: border-box;
+                padding: 0.5rem 1.5rem;
+                border: 1px solid var(--border-color);
+                border-radius: var(--border-radius);
+                font-size: 1rem;
+                font-weight: 600;
+                background-color: var(--background-color);
+            }
+        }
+
+        .description {
+            color: var(--text-color);
+            text-align: justify;
+            font-weight: 400;
+        }
+
+        .items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            font-size: 1.3rem;
+            gap: 10px;
+            background-color: var(--box-shadow);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            color: var(--text-color);
+
+            .anothername {
+                grid-column: span 2;
+            }
+
+        }
+    }
+}
+
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7rem;
+    box-shadow: 0 0 30px 30px var(--black);
+    background-color: var(--black);
+
+    @include tablet() {
+        padding: var(--padding-page);
+    }
+
+    @include mobile() {
+        padding: var(--padding-page);
+    }
+
+}
+
+.auxiliary {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    position: relative;
+    padding: var(--padding-page);
+
+    .episode {
+        border-radius: var(--border-radius);
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 20px;
+        background-color: var(--box-shadow);
+        box-shadow: var(--box-shadow);
+        padding: 2rem;
+
+        @include mobile() {
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            gap: 15px;
+        }
+
+        .item {
+            @include flex(center, center);
+            cursor: pointer;
+            padding: 7px 0;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+
+            &:hover {
+                background-color: var(--main-color);
+            }
+        }
+
+        .active {
+            background-color: var(--main-color) !important;
+        }
+
+    }
+}
+
+.comment {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--padding-page);
+}
