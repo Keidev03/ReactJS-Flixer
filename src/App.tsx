@@ -3,32 +3,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 import { PublicRoutes } from "./routes/routes"
 import MainLayout from "./layouts/MainLayout/MainLayout"
+import { CarouselTranslateX } from "./CarouselTranslateX"
 
 function App() {
 
   return (
-    <Router>
-      <div className="app">
-        <Routes>
-          {PublicRoutes.map((route, index) => {
-            const Page = route.component;
-            let Layout: React.ComponentType<any> = MainLayout;
-
-            return (
-              <Route
-                key={index}
-                path={route.path}
-                element={
-                  <Layout>
-                    <Page />
-                  </Layout>
-                }
-              />
-            );
-          })}
-        </Routes>
-      </div>
-    </Router>
+    <CarouselTranslateX>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </CarouselTranslateX>
   )
 }
 

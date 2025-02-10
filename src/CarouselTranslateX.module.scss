@@ -1,0 +1,39 @@
+@use '../../scss/' as *;
+
+.heroCard__controls {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    display: flex;
+
+    .heroCard__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        @include mobilesm() {
+            display: none;
+        }
+
+        .swiperButtonPrev,
+        .swiperButtonNext {
+            position: absolute;
+            padding: 50px 20px;
+            cursor: pointer;
+        }
+
+        .swiperButtonPrev {
+            left: 0.1vw;
+        }
+
+        .swiperButtonNext {
+            right: 0.1vw;
+        }
+
+        .swiperButtonPrev.unactive,
+        .swiperButtonNext.unactive {
+            display: none;
+        }
+    }
+}
